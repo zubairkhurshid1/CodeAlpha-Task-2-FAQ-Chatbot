@@ -1,0 +1,467 @@
+[
+  {
+    "id": "faq_react_definition",
+    "category": "Frontend Development",
+    "question": "What is React?",
+    "patterns": [
+      "What is React?",
+      "What is React.js?",
+      "Can you explain what React is?",
+      "Tell me about React library",
+      "What is the React framework used for?",
+      "Why do developers use React?"
+    ],
+    "answer": "React is an open-source JavaScript library developed by Meta (formerly Facebook) for building interactive user interfaces, particularly single-page applications. It uses a component-based architecture and a Virtual DOM to efficiently update and render UI elements.",
+    "related_questions": [
+      "What are React components?",
+      "What are React hooks?",
+      "What is the Virtual DOM in React?"
+    ],
+    "keywords": ["react", "reactjs", "javascript", "library", "frontend", "ui"]
+  },
+  {
+    "id": "faq_react_components",
+    "category": "Frontend Development",
+    "question": "What are React components?",
+    "patterns": [
+      "What are React components?",
+      "Explain components in React",
+      "How do components work in React?",
+      "What is a functional component?",
+      "What are class components in React?"
+    ],
+    "answer": "Components are independent, reusable pieces of code that serve as the building blocks of any React application. They accept arbitrary inputs called props and return React elements describing what should appear on the screen. Modern React primarily uses functional components with hooks.",
+    "related_questions": [
+      "What is React?",
+      "What are React hooks?",
+      "What are props in React?"
+    ],
+    "keywords": ["components", "react", "props", "jsx", "functional", "reusable"]
+  },
+  {
+    "id": "faq_react_hooks",
+    "category": "Frontend Development",
+    "question": "What are React hooks?",
+    "patterns": [
+      "What are React hooks?",
+      "Explain React hooks",
+      "Why do we use hooks in React?",
+      "What is useState and useEffect?",
+      "How do hooks work in React?"
+    ],
+    "answer": "React Hooks are functions introduced in React 16.8 that let you use state and other React lifecycle features in functional components without writing class components. Common built-in hooks include useState, useEffect, useContext, useMemo, and useRef.",
+    "related_questions": [
+      "What is React?",
+      "What are React components?",
+      "What is the difference between useState and useEffect?"
+    ],
+    "keywords": ["hooks", "react", "usestate", "useeffect", "state", "lifecycle"]
+  },
+  {
+    "id": "faq_virtual_dom",
+    "category": "Frontend Development",
+    "question": "What is the Virtual DOM in React?",
+    "patterns": [
+      "What is the Virtual DOM in React?",
+      "Explain Virtual DOM",
+      "How does the Virtual DOM work?",
+      "Virtual DOM vs Real DOM",
+      "Why is Virtual DOM faster than Real DOM?"
+    ],
+    "answer": "The Virtual DOM (VDOM) is a lightweight in-memory representation of the real DOM kept in sync with the real DOM through a process called reconciliation. When state changes occur, React updates the Virtual DOM first, compares it with the previous snapshot (diffing), and calculates the minimal set of real DOM operations required, significantly boosting performance.",
+    "related_questions": [
+      "What is React?",
+      "What are React components?"
+    ],
+    "keywords": ["virtual dom", "vdom", "dom", "reconciliation", "diffing", "react"]
+  },
+  {
+    "id": "faq_fastapi_definition",
+    "category": "Backend Development",
+    "question": "What is FastAPI?",
+    "patterns": [
+      "What is FastAPI?",
+      "Can you explain FastAPI in Python?",
+      "Tell me about the FastAPI framework",
+      "Why should I use FastAPI?",
+      "What is FastAPI used for?"
+    ],
+    "answer": "FastAPI is a modern, high-performance web framework for building APIs with Python 3.8+ based on standard Python type hints. Built on Starlette and Pydantic, it provides automatic OpenAPI and Swagger interactive documentation, high speed comparable to NodeJS and Go, and robust data validation out of the box.",
+    "related_questions": [
+      "FastAPI vs Flask vs Django",
+      "What is Pydantic in Python?",
+      "What is an API?"
+    ],
+    "keywords": ["fastapi", "python", "backend", "api", "framework", "rest", "swagger"]
+  },
+  {
+    "id": "faq_api_definition",
+    "category": "Software Engineering",
+    "question": "What is an API?",
+    "patterns": [
+      "What is an API?",
+      "What does API stand for?",
+      "Explain how an API works",
+      "What is an Application Programming Interface?",
+      "Why do we need APIs in software?"
+    ],
+    "answer": "API stands for Application Programming Interface. It is a set of defined rules, protocols, and tools that enable different software applications to communicate and exchange data with one another. Examples include RESTful APIs, GraphQL APIs, and WebSocket APIs.",
+    "related_questions": [
+      "What is REST API?",
+      "What is FastAPI?",
+      "What is the difference between REST and GraphQL?"
+    ],
+    "keywords": ["api", "interface", "protocol", "communication", "backend", "endpoints"]
+  },
+  {
+    "id": "faq_rest_api",
+    "category": "Backend Development",
+    "question": "What is a REST API?",
+    "patterns": [
+      "What is a REST API?",
+      "What is RESTful architecture?",
+      "Explain REST principles",
+      "How do REST APIs work?",
+      "What are HTTP methods in REST?"
+    ],
+    "answer": "A REST (Representational State Transfer) API is an architectural style for networked applications that uses HTTP methods (GET, POST, PUT, DELETE, PATCH) to perform CRUD operations on resources identified by URIs. RESTful services are stateless, cacheable, and maintain a client-server separation.",
+    "related_questions": [
+      "What is an API?",
+      "What is FastAPI?",
+      "What is the difference between GET and POST?"
+    ],
+    "keywords": ["rest", "restful", "api", "http", "crud", "stateless", "get", "post"]
+  },
+  {
+    "id": "faq_python_definition",
+    "category": "Programming Languages",
+    "question": "What is Python?",
+    "patterns": [
+      "What is Python?",
+      "Explain Python programming language",
+      "Why is Python so popular?",
+      "What is Python used for?",
+      "Tell me about Python features"
+    ],
+    "answer": "Python is a high-level, interpreted, dynamically typed programming language known for its clear, readable syntax and extensive standard library. It supports multiple programming paradigms including procedural, object-oriented, and functional programming, and is widely used in web development, data science, machine learning, automation, and backend engineering.",
+    "related_questions": [
+      "What is FastAPI?",
+      "What is machine learning in Python?",
+      "What is the difference between Python and JavaScript?"
+    ],
+    "keywords": ["python", "programming", "interpreted", "language", "coding", "data science"]
+  },
+  {
+    "id": "faq_nlp_definition",
+    "category": "Artificial Intelligence",
+    "question": "What is Natural Language Processing (NLP)?",
+    "patterns": [
+      "What is Natural Language Processing?",
+      "What is NLP?",
+      "Explain Natural Language Processing in AI",
+      "How does NLP work?",
+      "What are NLP applications?"
+    ],
+    "answer": "Natural Language Processing (NLP) is a branch of Artificial Intelligence and computational linguistics focused on enabling computers to understand, interpret, manipulate, and generate human language. Core NLP tasks include tokenization, sentiment analysis, named entity recognition (NER), text classification, and semantic similarity matching.",
+    "related_questions": [
+      "What is TF-IDF in NLP?",
+      "What is Cosine Similarity in NLP?",
+      "What is Tokenization in NLP?"
+    ],
+    "keywords": ["nlp", "natural language processing", "ai", "artificial intelligence", "text processing", "linguistics"]
+  },
+  {
+    "id": "faq_tfidf_definition",
+    "category": "Artificial Intelligence",
+    "question": "What is TF-IDF in NLP?",
+    "patterns": [
+      "What is TF-IDF?",
+      "What is TF-IDF in NLP?",
+      "Explain Term Frequency Inverse Document Frequency",
+      "How does TF-IDF vectorization work?",
+      "Why do we use TF-IDF in text matching?"
+    ],
+    "answer": "TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a statistical numerical statistic that reflects how important a word is to a document in a collection or corpus. Term Frequency (TF) measures how frequently a term occurs in a document, while Inverse Document Frequency (IDF) scales down common words across all documents, highlighting distinctive descriptive terms.",
+    "related_questions": [
+      "What is Cosine Similarity in NLP?",
+      "What is Natural Language Processing (NLP)?",
+      "What is Tokenization in NLP?"
+    ],
+    "keywords": ["tf-idf", "tfidf", "term frequency", "inverse document frequency", "vectorizer", "nlp", "scikit-learn"]
+  },
+  {
+    "id": "faq_cosine_similarity",
+    "category": "Artificial Intelligence",
+    "question": "What is Cosine Similarity in NLP?",
+    "patterns": [
+      "What is Cosine Similarity?",
+      "What is Cosine Similarity in NLP?",
+      "How does cosine similarity measure text similarity?",
+      "Explain cosine similarity formula",
+      "Why use cosine similarity with TF-IDF vectors?"
+    ],
+    "answer": "Cosine Similarity is a metric used to measure the cosine of the angle between two non-zero vectors projected in a multi-dimensional space. In NLP, documents are converted into numerical TF-IDF vectors, and cosine similarity computes their dot product divided by the product of their magnitudes, yielding a score between 0 (completely orthogonal/unrelated) and 1 (identical direction), regardless of document length.",
+    "related_questions": [
+      "What is TF-IDF in NLP?",
+      "What is Natural Language Processing (NLP)?",
+      "What is text preprocessing?"
+    ],
+    "keywords": ["cosine similarity", "similarity", "vectors", "nlp", "dot product", "metric", "distance"]
+  },
+  {
+    "id": "faq_tokenization",
+    "category": "Artificial Intelligence",
+    "question": "What is Tokenization in NLP?",
+    "patterns": [
+      "What is Tokenization in NLP?",
+      "What is tokenization?",
+      "Explain word and sentence tokenization",
+      "Why is tokenization the first step in NLP?",
+      "How does tokenizer work?"
+    ],
+    "answer": "Tokenization is the process of breaking down raw, continuous text into smaller individual units called tokens, such as words, punctuation marks, or subwords. It is typically the foundational preprocessing step before lowercasing, stopword removal, stemming, lemmatization, and vectorization.",
+    "related_questions": [
+      "What is Natural Language Processing (NLP)?",
+      "What is TF-IDF in NLP?",
+      "What is text preprocessing?"
+    ],
+    "keywords": ["tokenization", "tokens", "tokenizer", "nlp", "preprocessing", "nltk"]
+  },
+  {
+    "id": "faq_git_definition",
+    "category": "Version Control",
+    "question": "What is Git and how does it work?",
+    "patterns": [
+      "What is Git?",
+      "What is Git and how does it work?",
+      "Can you explain Git version control?",
+      "What is Git used for?",
+      "Difference between Git and GitHub"
+    ],
+    "answer": "Git is a distributed version control system designed to track changes in source code during software development. It allows multiple developers to work collaboratively, maintain branches, commit snapshots of project states, track history, and merge contributions safely.",
+    "related_questions": [
+      "What is GitHub?",
+      "What is a Git branch and how does merging work?",
+      "What is the difference between git pull and git fetch?"
+    ],
+    "keywords": ["git", "version control", "vcs", "repository", "commits", "branches"]
+  },
+  {
+    "id": "faq_github_definition",
+    "category": "Version Control",
+    "question": "What is GitHub?",
+    "patterns": [
+      "What is GitHub?",
+      "Explain GitHub platform",
+      "What is the difference between Git and GitHub?",
+      "Why do developers use GitHub?",
+      "What features does GitHub offer?"
+    ],
+    "answer": "GitHub is a cloud-based hosting platform that manages Git repositories. It enhances Git with collaborative features such as pull requests, code reviews, issue tracking, continuous integration and deployment (GitHub Actions), project boards, and team access management.",
+    "related_questions": [
+      "What is Git and how does it work?",
+      "What is CI/CD?"
+    ],
+    "keywords": ["github", "git", "cloud", "repository", "collaboration", "pull request"]
+  },
+  {
+    "id": "faq_git_branch",
+    "category": "Version Control",
+    "question": "What is a Git branch and how does merging work?",
+    "patterns": [
+      "What is a Git branch and how does merging work?",
+      "What is a branch in Git?",
+      "How to branch and merge in Git?",
+      "Explain git merge and pull requests",
+      "Why do we use branches in Git?"
+    ],
+    "answer": "A Git branch is a lightweight movable pointer to a specific commit in the repository history. Branches enable developers to isolate new features, bug fixes, or experiments without affecting the main codebase (production). Once work is tested and approved, branches are merged back into the main branch using git merge or pull requests.",
+    "related_questions": [
+      "What is Git and how does it work?",
+      "What is GitHub?"
+    ],
+    "keywords": ["git branch", "merge", "pull request", "branching", "git"]
+  },
+  {
+    "id": "faq_docker_definition",
+    "category": "DevOps & Cloud",
+    "question": "What is Docker and containerization?",
+    "patterns": [
+      "What is Docker?",
+      "What is Docker and containerization?",
+      "Explain containers in Docker",
+      "Why do we use Docker in development?",
+      "What is the difference between Docker and a Virtual Machine?"
+    ],
+    "answer": "Docker is an open platform for developing, shipping, and running applications inside lightweight, portable units called containers. Unlike virtual machines that emulate complete hardware and run separate guest operating systems, containers share the host kernel while isolating filesystem, processes, and network, guaranteeing identical behavior across development and production environments.",
+    "related_questions": [
+      "What is CI/CD?",
+      "What is Kubernetes?",
+      "What is cloud computing?"
+    ],
+    "keywords": ["docker", "containers", "containerization", "devops", "virtual machine", "image"]
+  },
+  {
+    "id": "faq_cicd_definition",
+    "category": "DevOps & Cloud",
+    "question": "What is CI/CD in modern software development?",
+    "patterns": [
+      "What is CI/CD?",
+      "What is CI/CD in modern software development?",
+      "Explain Continuous Integration and Continuous Delivery",
+      "What are CI/CD pipelines?",
+      "Why is CI/CD important in DevOps?"
+    ],
+    "answer": "CI/CD stands for Continuous Integration and Continuous Delivery (or Deployment). CI automates the process of merging code changes, compiling builds, and running automated tests frequently. CD automatically packages and deploys validated code to staging or production environments, reducing manual errors and accelerating software release cycles.",
+    "related_questions": [
+      "What is Docker and containerization?",
+      "What is GitHub?"
+    ],
+    "keywords": ["ci/cd", "continuous integration", "continuous delivery", "pipeline", "devops", "deployment"]
+  },
+  {
+    "id": "faq_database_sql_vs_nosql",
+    "category": "Databases",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "patterns": [
+      "What is the difference between SQL and NoSQL?",
+      "What is the difference between SQL and NoSQL databases?",
+      "SQL vs NoSQL databases",
+      "When to use SQL and when to use NoSQL?",
+      "Explain relational vs non-relational databases"
+    ],
+    "answer": "SQL databases (like PostgreSQL, MySQL, SQLite) are relational databases that store structured data in tables with predefined schemas and enforce ACID transactions. NoSQL databases (like MongoDB, Redis, Cassandra) are non-relational and store unstructured or semi-structured data as documents, key-values, or graphs, providing dynamic schemas and horizontal scalability.",
+    "related_questions": [
+      "What is an API?",
+      "What is FastAPI?"
+    ],
+    "keywords": ["sql", "nosql", "database", "relational", "mongodb", "postgresql", "schema"]
+  },
+  {
+    "id": "faq_mvc_architecture",
+    "category": "Software Engineering",
+    "question": "What is the MVC (Model-View-Controller) architecture?",
+    "patterns": [
+      "What is MVC architecture?",
+      "What is the MVC (Model-View-Controller) architecture?",
+      "Explain Model View Controller pattern",
+      "How does MVC work in web development?",
+      "Why do we use MVC design pattern?"
+    ],
+    "answer": "MVC stands for Model-View-Controller. It is a widely used software design pattern that separates application logic into three interconnected components: the Model manages data and business logic; the View handles the visual UI presentation; and the Controller mediates user input, manipulates the model, and updates the view.",
+    "related_questions": [
+      "What is an API?",
+      "What is React?"
+    ],
+    "keywords": ["mvc", "model", "view", "controller", "architecture", "design pattern"]
+  },
+  {
+    "id": "faq_javascript_vs_typescript",
+    "category": "Programming Languages",
+    "question": "What is the difference between JavaScript and TypeScript?",
+    "patterns": [
+      "What is the difference between JavaScript and TypeScript?",
+      "JavaScript vs TypeScript",
+      "Why use TypeScript instead of JavaScript?",
+      "What is TypeScript?",
+      "Is TypeScript better than JavaScript?"
+    ],
+    "answer": "TypeScript is a strongly typed superset of JavaScript developed by Microsoft. While JavaScript is dynamically typed and evaluated at runtime, TypeScript introduces static typing, interfaces, and compile-time type checking. TypeScript compiles down to clean JavaScript, helping developers catch bugs early and improve IDE autocompletion and refactoring.",
+    "related_questions": [
+      "What is React?",
+      "What is Python?"
+    ],
+    "keywords": ["javascript", "typescript", "types", "compiler", "frontend", "programming"]
+  },
+  {
+    "id": "faq_clean_code",
+    "category": "Software Engineering",
+    "question": "What are the SOLID principles in software engineering?",
+    "patterns": [
+      "What are the SOLID principles?",
+      "What are the SOLID principles in software engineering?",
+      "Explain SOLID design principles",
+      "What does SOLID stand for in OOP?",
+      "Why are SOLID principles important in software design?"
+    ],
+    "answer": "SOLID is an acronym for five object-oriented design principles formulated by Robert C. Martin: Single Responsibility (one reason to change), Open/Closed (open for extension, closed for modification), Liskov Substitution (subtypes must be substitutable for base types), Interface Segregation (client-specific interfaces), and Dependency Inversion (depend on abstractions, not concretions).",
+    "related_questions": [
+      "What is the MVC (Model-View-Controller) architecture?",
+      "What is Git and how does it work?"
+    ],
+    "keywords": ["solid", "principles", "clean code", "object oriented", "design pattern", "architecture"]
+  },
+  {
+    "id": "faq_http_status_codes",
+    "category": "Backend Development",
+    "question": "What are common HTTP status codes and what do they mean?",
+    "patterns": [
+      "What are common HTTP status codes and what do they mean?",
+      "What do HTTP status codes mean?",
+      "Explain 200, 404, and 500 status codes",
+      "What is difference between 400 and 500 error?",
+      "What does HTTP 404 Not Found mean?"
+    ],
+    "answer": "HTTP status codes indicate the result of a client request: 1xx are informational; 2xx indicate success (e.g., 200 OK, 201 Created); 3xx handle redirection (e.g., 301 Moved Permanently); 4xx represent client-side errors (e.g., 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found); and 5xx denote server-side errors (e.g., 500 Internal Server Error, 502 Bad Gateway).",
+    "related_questions": [
+      "What is a REST API?",
+      "What is an API?"
+    ],
+    "keywords": ["http", "status codes", "200", "404", "500", "rest", "api"]
+  },
+  {
+    "id": "faq_cors_explanation",
+    "category": "Backend Development",
+    "question": "What is CORS (Cross-Origin Resource Sharing)?",
+    "patterns": [
+      "What is CORS?",
+      "What is CORS (Cross-Origin Resource Sharing)?",
+      "Explain CORS error in web development",
+      "How to fix CORS error between frontend and backend?",
+      "Why does the browser block cross-origin requests?"
+    ],
+    "answer": "CORS (Cross-Origin Resource Sharing) is a browser security mechanism that restricts web applications running at one origin (domain, protocol, or port) from making requests to a different origin. Servers configure CORS headers (such as Access-Control-Allow-Origin and Access-Control-Allow-Methods) to explicitly whitelist authorized client domains.",
+    "related_questions": [
+      "What is a REST API?",
+      "What is FastAPI?",
+      "What is an API?"
+    ],
+    "keywords": ["cors", "cross origin", "security", "browser", "headers", "backend"]
+  },
+  {
+    "id": "faq_cloud_computing",
+    "category": "DevOps & Cloud",
+    "question": "What is Cloud Computing and its service models (IaaS, PaaS, SaaS)?",
+    "patterns": [
+      "What is Cloud Computing?",
+      "What is Cloud Computing and its service models?",
+      "Explain IaaS, PaaS, and SaaS",
+      "What is the difference between IaaS PaaS SaaS?",
+      "Why do companies move to cloud providers like AWS, Azure, GCP?"
+    ],
+    "answer": "Cloud computing is the on-demand delivery of computing services—servers, storage, databases, networking, and software—over the internet with pay-as-you-go pricing. The main service models are: IaaS (Infrastructure as a Service, e.g., AWS EC2), PaaS (Platform as a Service, e.g., Render, Heroku), and SaaS (Software as a Service, e.g., Google Workspace, Slack).",
+    "related_questions": [
+      "What is Docker and containerization?",
+      "What is CI/CD in modern software development?"
+    ],
+    "keywords": ["cloud", "cloud computing", "iaas", "paas", "saas", "aws", "render"]
+  },
+  {
+    "id": "faq_vite_definition",
+    "category": "Frontend Development",
+    "question": "What is Vite and why is it used for modern frontend tooling?",
+    "patterns": [
+      "What is Vite?",
+      "What is Vite and why is it used for modern frontend tooling?",
+      "Why use Vite instead of Create React App?",
+      "Explain Vite build tool",
+      "How does Vite achieve fast Hot Module Replacement (HMR)?"
+    ],
+    "answer": "Vite is a next-generation frontend build tool created by Evan You. It leverages native ES modules (ESM) in the browser during development to serve code instantly without bundling, providing lightning-fast Cold Server Start and instantaneous Hot Module Replacement (HMR). For production, it uses Rollup to generate highly optimized static assets.",
+    "related_questions": [
+      "What is React?",
+      "What is the difference between JavaScript and TypeScript?"
+    ],
+    "keywords": ["vite", "frontend", "bundler", "react", "hmr", "build tool", "es modules"]
+  }
+]
