@@ -463,5 +463,102 @@
       "What is the difference between JavaScript and TypeScript?"
     ],
     "keywords": ["vite", "frontend", "bundler", "react", "hmr", "build tool", "es modules"]
+  },
+  {
+    "id": "faq_nextjs_definition",
+    "category": "Frontend Development",
+    "question": "What is Next.js?",
+    "patterns": [
+      "What is Next.js?",
+      "What is next js?",
+      "Explain Next.js framework",
+      "Why use Next.js with React?",
+      "What is Next.js used for?",
+      "Tell me about Next.js features",
+      "Next.js vs React"
+    ],
+    "answer": "Next.js is a full-stack React framework developed by Vercel that enables developers to build high-performance web applications. It provides Server-Side Rendering (SSR), Static Site Generation (SSG), Incremental Static Regeneration (ISR), automatic code splitting, file-based routing via the App Router, and integrated API routes, overcoming client-side React SEO and initial loading limitations.",
+    "related_questions": [
+      "What is React?",
+      "What is Vite and why is it used for modern frontend tooling?",
+      "What is an API?"
+    ],
+    "keywords": ["nextjs", "next.js", "next js", "react", "ssr", "ssg", "vercel", "fullstack", "frontend"]
+  },
+  {
+    "id": "faq_nodejs_definition",
+    "category": "Backend Development",
+    "question": "What is Node.js?",
+    "patterns": [
+      "What is Node.js?",
+      "What is node js?",
+      "Explain Node.js runtime",
+      "What is Node.js used for?",
+      "Why use Node.js for backend development?",
+      "How does the Node.js event loop work?"
+    ],
+    "answer": "Node.js is an open-source, cross-platform JavaScript runtime environment built on Google Chrome's V8 JavaScript engine. It executes JavaScript outside the browser using an asynchronous, event-driven, non-blocking I/O model, making it lightweight, highly scalable, and well-suited for data-intensive real-time applications and microservices.",
+    "related_questions": [
+      "What is an API?",
+      "What is FastAPI?",
+      "What is a REST API?"
+    ],
+    "keywords": ["nodejs", "node.js", "node js", "javascript", "v8", "runtime", "backend", "event loop"]
+  },
+  {
+    "id": "faq_express_definition",
+    "category": "Backend Development",
+    "question": "What is Express.js?",
+    "patterns": [
+      "What is Express.js?",
+      "What is express js?",
+      "Explain Express framework for Node.js",
+      "What is Express used for?",
+      "How does middleware work in Express?"
+    ],
+    "answer": "Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for building web applications and RESTful APIs. It simplifies handling HTTP requests, routing, template rendering, and middleware integration, serving as the de facto standard backend framework in the MERN/MEAN stack.",
+    "related_questions": [
+      "What is Node.js?",
+      "What is a REST API?",
+      "What is FastAPI?"
+    ],
+    "keywords": ["express", "expressjs", "express.js", "nodejs", "middleware", "api", "backend"]
+  },
+  {
+    "id": "faq_vuejs_definition",
+    "category": "Frontend Development",
+    "question": "What is Vue.js?",
+    "patterns": [
+      "What is Vue.js?",
+      "What is vue js?",
+      "Explain Vue.js framework",
+      "What is Vue used for?",
+      "Vue.js vs React"
+    ],
+    "answer": "Vue.js is a progressive JavaScript framework created by Evan You for building user interfaces. It features an incrementally adoptable architecture focusing on the view layer, two-way data binding with a reactive data model, single-file components (.vue files), and a gentle learning curve compared to Angular and React.",
+    "related_questions": [
+      "What is React?",
+      "What is Vite and why is it used for modern frontend tooling?"
+    ],
+    "keywords": ["vue", "vuejs", "vue.js", "frontend", "ui", "javascript", "reactive"]
+  },
+  {
+    "id": "faq_django_flask",
+    "category": "Backend Development",
+    "question": "What is the difference between Django, Flask, and FastAPI?",
+    "patterns": [
+      "FastAPI vs Flask vs Django",
+      "What is the difference between Django, Flask, and FastAPI?",
+      "Django vs Flask in Python",
+      "When to use Django and when to use FastAPI?",
+      "Python backend framework comparison"
+    ],
+    "answer": "Django is a 'batteries-included' full-stack Python framework with a built-in ORM, admin panel, and authentication. Flask is a lightweight micro-framework offering maximum flexibility with minimal boilerplate. FastAPI is a modern, high-speed framework designed specifically for APIs, leveraging Python type hints, automatic OpenAPI/Swagger documentation, and asynchronous concurrency via Starlette and Pydantic.",
+    "related_questions": [
+      "What is FastAPI?",
+      "What is Python?",
+      "What is a REST API?"
+    ],
+    "keywords": ["django", "flask", "fastapi", "python", "backend", "comparison", "framework"]
   }
 ]

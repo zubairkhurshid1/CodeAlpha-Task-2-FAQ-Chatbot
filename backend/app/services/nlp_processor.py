@@ -64,10 +64,11 @@ class NLPProcessor:
     }
 
     TECH_REPLACEMENTS = {
-        r"\b(react\.js|reactjs)\b": "react",
-        r"\b(node\.js|nodejs)\b": "node",
-        r"\b(vue\.js|vuejs)\b": "vue",
-        r"\b(next\.js|nextjs)\b": "next",
+        r"\b(react\.js|reactjs|react\s+js)\b": "react",
+        r"\b(node\.js|nodejs|node\s+js)\b": "nodejs",
+        r"\b(vue\.js|vuejs|vue\s+js)\b": "vue",
+        r"\b(next\.js|nextjs|next\s+js)\b": "nextjs",
+        r"\b(express\.js|expressjs|express\s+js)\b": "express",
         r"\b(c\+\+)\b": "cpp",
         r"\b(c\#)\b": "csharp",
         r"\b(ci\/cd|ci-cd)\b": "cicd",
