@@ -59,7 +59,7 @@ export default function ChatWindow({
               Your Intelligent Technology & Software Development FAQ Assistant
             </p>
             <p className="welcome-description">
-              Ask questions in natural language. IntelliFAQ uses a local <strong>Natural Language Processing (NLP)</strong> pipeline—including text preprocessing, <strong>TF-IDF Vectorization</strong>, and <strong>Cosine Similarity</strong>—to match your question against an indexed tech knowledge base with zero external paid APIs.
+              Ask questions in natural language. IntelliFAQ uses a local <strong>Natural Language Processing (NLP)</strong> pipeline including text preprocessing, <strong>TF-IDF Vectorization</strong>, and <strong>Cosine Similarity</strong>to match your question against an indexed tech knowledge base with zero external paid APIs.
             </p>
           </div>
 

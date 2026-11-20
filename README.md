@@ -1,7 +1,7 @@
 # 🤖 IntelliFAQ - Intelligent NLP-Powered FAQ Chatbot
 
 > An intelligent, production-ready Natural Language Processing (NLP) chatbot designed to understand developer queries in natural language, vectorise conversational text, and match user intents to an indexed knowledge base with mathematical precision.  
-> **100% Local NLP Execution — Zero Paid External APIs.**
+> **100% Local NLP Execution, Zero Paid External APIs.**
 
 ---
 
