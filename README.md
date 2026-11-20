@@ -1,6 +1,5 @@
 # 🤖 IntelliFAQ - Intelligent NLP-Powered FAQ Chatbot
 
-> **CodeAlpha Artificial Intelligence Internship — Task 2**  
 > An intelligent, production-ready Natural Language Processing (NLP) chatbot designed to understand developer queries in natural language, vectorise conversational text, and match user intents to an indexed knowledge base with mathematical precision.  
 > **100% Local NLP Execution — Zero Paid External APIs.**
 
@@ -40,7 +39,7 @@
 
 ## 🌟 Project Overview
 
-**IntelliFAQ** is built as part of the **CodeAlpha Artificial Intelligence Internship (Task 2)**. Traditional static chatbots rely on hardcoded `if/else` keyword string checks that break easily when users rephrase questions, use typos, or provide polite filler phrases.
+**IntelliFAQ** is an intelligent retrieval-based FAQ Assistant. Traditional static chatbots rely on hardcoded `if/else` keyword string checks that break easily when users rephrase questions, use typos, or provide polite filler phrases.
 
 IntelliFAQ solves this by employing a genuine **Natural Language Processing (NLP)** pipeline:
 - Ingests freeform questions in natural language.
@@ -429,7 +428,7 @@ Browse the full catalog of indexed FAQs by domain, inspect recent conversations,
 
 ## 📜 License & Acknowledgments
 
-This project is developed by **Zubair Khurshid** as part of the **CodeAlpha Artificial Intelligence Internship (Task 2: FAQ Chatbot)**.
+This project is developed by **Zubair Khurshid**.
 
 Built with:
 - [FastAPI](https://fastapi.tiangolo.com/)

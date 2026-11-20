@@ -33,7 +33,7 @@ export default function Header({
           <div className="brand-text">
             <div className="brand-title-row">
               <span className="brand-name">IntelliFAQ</span>
-              <span className="brand-badge">CodeAlpha Task 2</span>
+              <span className="brand-badge">NLP Powered</span>
             </div>
             <span className="brand-tagline">Your Intelligent FAQ Assistant</span>
           </div>

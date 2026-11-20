@@ -1,7 +1,7 @@
 @echo off
 title IntelliFAQ - Start Backend and Frontend
 echo ===================================================
-echo   Starting IntelliFAQ (CodeAlpha Task 2)
+echo   Starting IntelliFAQ Assistant
 echo ===================================================
 
 cd /d "%~dp0"

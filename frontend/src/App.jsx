@@ -425,7 +425,7 @@ export default function App() {
               <div className="project-banner">
                 <Award size={20} className="banner-icon" />
                 <div>
-                  <strong>CodeAlpha Artificial Intelligence Internship</strong> — Task 2: FAQ Chatbot
+                  <strong>IntelliFAQ</strong> — Intelligent NLP-Powered FAQ Assistant
                 </div>
               </div>
 

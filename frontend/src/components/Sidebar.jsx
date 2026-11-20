@@ -314,8 +314,8 @@ export default function Sidebar({
           <div className="internship-badge">
             <Award size={15} className="award-icon" />
             <div className="badge-text">
-              <span className="badge-primary">CodeAlpha AI Internship</span>
-              <span className="badge-secondary">Task 2 • FAQ Chatbot</span>
+              <span className="badge-primary">IntelliFAQ NLP Engine</span>
+              <span className="badge-secondary">TF-IDF & Cosine Similarity</span>
             </div>
           </div>
         </div>
