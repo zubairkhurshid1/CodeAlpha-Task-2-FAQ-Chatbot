@@ -17,7 +17,14 @@
       "What are React hooks?",
       "What is the Virtual DOM in React?"
     ],
-    "keywords": ["react", "reactjs", "javascript", "library", "frontend", "ui"]
+    "keywords": [
+      "react",
+      "reactjs",
+      "javascript",
+      "library",
+      "frontend",
+      "ui"
+    ]
   },
   {
     "id": "faq_react_components",
@@ -36,7 +43,14 @@
       "What are React hooks?",
       "What are props in React?"
     ],
-    "keywords": ["components", "react", "props", "jsx", "functional", "reusable"]
+    "keywords": [
+      "components",
+      "react",
+      "props",
+      "jsx",
+      "functional",
+      "reusable"
+    ]
   },
   {
     "id": "faq_react_hooks",
@@ -55,7 +69,14 @@
       "What are React components?",
       "What is the difference between useState and useEffect?"
     ],
-    "keywords": ["hooks", "react", "usestate", "useeffect", "state", "lifecycle"]
+    "keywords": [
+      "hooks",
+      "react",
+      "usestate",
+      "useeffect",
+      "state",
+      "lifecycle"
+    ]
   },
   {
     "id": "faq_virtual_dom",
@@ -73,7 +94,14 @@
       "What is React?",
       "What are React components?"
     ],
-    "keywords": ["virtual dom", "vdom", "dom", "reconciliation", "diffing", "react"]
+    "keywords": [
+      "virtual dom",
+      "vdom",
+      "dom",
+      "reconciliation",
+      "diffing",
+      "react"
+    ]
   },
   {
     "id": "faq_fastapi_definition",
@@ -92,7 +120,15 @@
       "What is Pydantic in Python?",
       "What is an API?"
     ],
-    "keywords": ["fastapi", "python", "backend", "api", "framework", "rest", "swagger"]
+    "keywords": [
+      "fastapi",
+      "python",
+      "backend",
+      "api",
+      "framework",
+      "rest",
+      "swagger"
+    ]
   },
   {
     "id": "faq_api_definition",
@@ -111,7 +147,14 @@
       "What is FastAPI?",
       "What is the difference between REST and GraphQL?"
     ],
-    "keywords": ["api", "interface", "protocol", "communication", "backend", "endpoints"]
+    "keywords": [
+      "api",
+      "interface",
+      "protocol",
+      "communication",
+      "backend",
+      "endpoints"
+    ]
   },
   {
     "id": "faq_rest_api",
@@ -130,7 +173,16 @@
       "What is FastAPI?",
       "What is the difference between GET and POST?"
     ],
-    "keywords": ["rest", "restful", "api", "http", "crud", "stateless", "get", "post"]
+    "keywords": [
+      "rest",
+      "restful",
+      "api",
+      "http",
+      "crud",
+      "stateless",
+      "get",
+      "post"
+    ]
   },
   {
     "id": "faq_python_definition",
@@ -149,7 +201,14 @@
       "What is machine learning in Python?",
       "What is the difference between Python and JavaScript?"
     ],
-    "keywords": ["python", "programming", "interpreted", "language", "coding", "data science"]
+    "keywords": [
+      "python",
+      "programming",
+      "interpreted",
+      "language",
+      "coding",
+      "data science"
+    ]
   },
   {
     "id": "faq_nlp_definition",
@@ -168,7 +227,14 @@
       "What is Cosine Similarity in NLP?",
       "What is Tokenization in NLP?"
     ],
-    "keywords": ["nlp", "natural language processing", "ai", "artificial intelligence", "text processing", "linguistics"]
+    "keywords": [
+      "nlp",
+      "natural language processing",
+      "ai",
+      "artificial intelligence",
+      "text processing",
+      "linguistics"
+    ]
   },
   {
     "id": "faq_tfidf_definition",
@@ -187,7 +253,15 @@
       "What is Natural Language Processing (NLP)?",
       "What is Tokenization in NLP?"
     ],
-    "keywords": ["tf-idf", "tfidf", "term frequency", "inverse document frequency", "vectorizer", "nlp", "scikit-learn"]
+    "keywords": [
+      "tf-idf",
+      "tfidf",
+      "term frequency",
+      "inverse document frequency",
+      "vectorizer",
+      "nlp",
+      "scikit-learn"
+    ]
   },
   {
     "id": "faq_cosine_similarity",
@@ -206,7 +280,15 @@
       "What is Natural Language Processing (NLP)?",
       "What is text preprocessing?"
     ],
-    "keywords": ["cosine similarity", "similarity", "vectors", "nlp", "dot product", "metric", "distance"]
+    "keywords": [
+      "cosine similarity",
+      "similarity",
+      "vectors",
+      "nlp",
+      "dot product",
+      "metric",
+      "distance"
+    ]
   },
   {
     "id": "faq_tokenization",
@@ -225,7 +307,14 @@
       "What is TF-IDF in NLP?",
       "What is text preprocessing?"
     ],
-    "keywords": ["tokenization", "tokens", "tokenizer", "nlp", "preprocessing", "nltk"]
+    "keywords": [
+      "tokenization",
+      "tokens",
+      "tokenizer",
+      "nlp",
+      "preprocessing",
+      "nltk"
+    ]
   },
   {
     "id": "faq_git_definition",
@@ -244,7 +333,14 @@
       "What is a Git branch and how does merging work?",
       "What is the difference between git pull and git fetch?"
     ],
-    "keywords": ["git", "version control", "vcs", "repository", "commits", "branches"]
+    "keywords": [
+      "git",
+      "version control",
+      "vcs",
+      "repository",
+      "commits",
+      "branches"
+    ]
   },
   {
     "id": "faq_github_definition",
@@ -262,7 +358,14 @@
       "What is Git and how does it work?",
       "What is CI/CD?"
     ],
-    "keywords": ["github", "git", "cloud", "repository", "collaboration", "pull request"]
+    "keywords": [
+      "github",
+      "git",
+      "cloud",
+      "repository",
+      "collaboration",
+      "pull request"
+    ]
   },
   {
     "id": "faq_git_branch",
@@ -280,7 +383,13 @@
       "What is Git and how does it work?",
       "What is GitHub?"
     ],
-    "keywords": ["git branch", "merge", "pull request", "branching", "git"]
+    "keywords": [
+      "git branch",
+      "merge",
+      "pull request",
+      "branching",
+      "git"
+    ]
   },
   {
     "id": "faq_docker_definition",
@@ -299,7 +408,14 @@
       "What is Kubernetes?",
       "What is cloud computing?"
     ],
-    "keywords": ["docker", "containers", "containerization", "devops", "virtual machine", "image"]
+    "keywords": [
+      "docker",
+      "containers",
+      "containerization",
+      "devops",
+      "virtual machine",
+      "image"
+    ]
   },
   {
     "id": "faq_cicd_definition",
@@ -317,7 +433,14 @@
       "What is Docker and containerization?",
       "What is GitHub?"
     ],
-    "keywords": ["ci/cd", "continuous integration", "continuous delivery", "pipeline", "devops", "deployment"]
+    "keywords": [
+      "ci/cd",
+      "continuous integration",
+      "continuous delivery",
+      "pipeline",
+      "devops",
+      "deployment"
+    ]
   },
   {
     "id": "faq_database_sql_vs_nosql",
@@ -335,7 +458,15 @@
       "What is an API?",
       "What is FastAPI?"
     ],
-    "keywords": ["sql", "nosql", "database", "relational", "mongodb", "postgresql", "schema"]
+    "keywords": [
+      "sql",
+      "nosql",
+      "database",
+      "relational",
+      "mongodb",
+      "postgresql",
+      "schema"
+    ]
   },
   {
     "id": "faq_mvc_architecture",
@@ -353,7 +484,14 @@
       "What is an API?",
       "What is React?"
     ],
-    "keywords": ["mvc", "model", "view", "controller", "architecture", "design pattern"]
+    "keywords": [
+      "mvc",
+      "model",
+      "view",
+      "controller",
+      "architecture",
+      "design pattern"
+    ]
   },
   {
     "id": "faq_javascript_vs_typescript",
@@ -371,7 +509,14 @@
       "What is React?",
       "What is Python?"
     ],
-    "keywords": ["javascript", "typescript", "types", "compiler", "frontend", "programming"]
+    "keywords": [
+      "javascript",
+      "typescript",
+      "types",
+      "compiler",
+      "frontend",
+      "programming"
+    ]
   },
   {
     "id": "faq_clean_code",
@@ -389,7 +534,14 @@
       "What is the MVC (Model-View-Controller) architecture?",
       "What is Git and how does it work?"
     ],
-    "keywords": ["solid", "principles", "clean code", "object oriented", "design pattern", "architecture"]
+    "keywords": [
+      "solid",
+      "principles",
+      "clean code",
+      "object oriented",
+      "design pattern",
+      "architecture"
+    ]
   },
   {
     "id": "faq_http_status_codes",
@@ -407,7 +559,15 @@
       "What is a REST API?",
       "What is an API?"
     ],
-    "keywords": ["http", "status codes", "200", "404", "500", "rest", "api"]
+    "keywords": [
+      "http",
+      "status codes",
+      "200",
+      "404",
+      "500",
+      "rest",
+      "api"
+    ]
   },
   {
     "id": "faq_cors_explanation",
@@ -426,7 +586,14 @@
       "What is FastAPI?",
       "What is an API?"
     ],
-    "keywords": ["cors", "cross origin", "security", "browser", "headers", "backend"]
+    "keywords": [
+      "cors",
+      "cross origin",
+      "security",
+      "browser",
+      "headers",
+      "backend"
+    ]
   },
   {
     "id": "faq_cloud_computing",
@@ -444,7 +611,15 @@
       "What is Docker and containerization?",
       "What is CI/CD in modern software development?"
     ],
-    "keywords": ["cloud", "cloud computing", "iaas", "paas", "saas", "aws", "render"]
+    "keywords": [
+      "cloud",
+      "cloud computing",
+      "iaas",
+      "paas",
+      "saas",
+      "aws",
+      "render"
+    ]
   },
   {
     "id": "faq_vite_definition",
@@ -462,7 +637,15 @@
       "What is React?",
       "What is the difference between JavaScript and TypeScript?"
     ],
-    "keywords": ["vite", "frontend", "bundler", "react", "hmr", "build tool", "es modules"]
+    "keywords": [
+      "vite",
+      "frontend",
+      "bundler",
+      "react",
+      "hmr",
+      "build tool",
+      "es modules"
+    ]
   },
   {
     "id": "faq_nextjs_definition",
@@ -483,7 +666,17 @@
       "What is Vite and why is it used for modern frontend tooling?",
       "What is an API?"
     ],
-    "keywords": ["nextjs", "next.js", "next js", "react", "ssr", "ssg", "vercel", "fullstack", "frontend"]
+    "keywords": [
+      "nextjs",
+      "next.js",
+      "next js",
+      "react",
+      "ssr",
+      "ssg",
+      "vercel",
+      "fullstack",
+      "frontend"
+    ]
   },
   {
     "id": "faq_nodejs_definition",
@@ -503,7 +696,16 @@
       "What is FastAPI?",
       "What is a REST API?"
     ],
-    "keywords": ["nodejs", "node.js", "node js", "javascript", "v8", "runtime", "backend", "event loop"]
+    "keywords": [
+      "nodejs",
+      "node.js",
+      "node js",
+      "javascript",
+      "v8",
+      "runtime",
+      "backend",
+      "event loop"
+    ]
   },
   {
     "id": "faq_express_definition",
@@ -522,7 +724,15 @@
       "What is a REST API?",
       "What is FastAPI?"
     ],
-    "keywords": ["express", "expressjs", "express.js", "nodejs", "middleware", "api", "backend"]
+    "keywords": [
+      "express",
+      "expressjs",
+      "express.js",
+      "nodejs",
+      "middleware",
+      "api",
+      "backend"
+    ]
   },
   {
     "id": "faq_vuejs_definition",
@@ -540,7 +750,15 @@
       "What is React?",
       "What is Vite and why is it used for modern frontend tooling?"
     ],
-    "keywords": ["vue", "vuejs", "vue.js", "frontend", "ui", "javascript", "reactive"]
+    "keywords": [
+      "vue",
+      "vuejs",
+      "vue.js",
+      "frontend",
+      "ui",
+      "javascript",
+      "reactive"
+    ]
   },
   {
     "id": "faq_django_flask",
@@ -559,6 +777,34 @@
       "What is Python?",
       "What is a REST API?"
     ],
-    "keywords": ["django", "flask", "fastapi", "python", "backend", "comparison", "framework"]
+    "keywords": [
+      "django",
+      "flask",
+      "fastapi",
+      "python",
+      "backend",
+      "comparison",
+      "framework"
+    ]
+  },
+  {
+    "category": "Modern APIs",
+    "question": "What is GraphQL?",
+    "answer": "GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data, developed by Meta in 2012.",
+    "patterns": [
+      "What is GraphQL?",
+      "Explain GraphQL API"
+    ],
+    "related_questions": [
+      "What is an API?",
+      "What is a REST API?"
+    ],
+    "keywords": [
+      "graphql",
+      "query language",
+      "api",
+      "rest"
+    ],
+    "id": "faq_b6dfead5"
   }
 ]
