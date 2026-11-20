@@ -84,22 +84,21 @@ export default function ChatWindow({
 
           {/* Typing indicator when model is analyzing */}
           {loading && (
-            <div className="chat-message-row bot-row typing-row">
-              <div className="avatar bot-avatar">
-                <Bot size={18} />
+            <div className="message-item is-bot typing-item">
+              <div className="message-avatar">
+                <Bot size={16} />
               </div>
-              <div className="message-content-container">
-                <div className="message-meta-header">
-                  <span className="sender-name">IntelliFAQ Assistant</span>
-                  <span className="message-time">Analyzing...</span>
+              <div className="message-body">
+                <div className="message-header-line">
+                  <span className="author-name">IntelliFAQ</span>
+                  <span className="timestamp">Analyzing query...</span>
                 </div>
-                <div className="message-bubble bot-bubble typing-bubble">
+                <div className="bubble bot-bubble typing-bubble">
                   <div className="typing-dots">
                     <span className="dot dot-1" />
                     <span className="dot dot-2" />
                     <span className="dot dot-3" />
                   </div>
-                  <span className="typing-label">Vectorizing & calculating similarity...</span>
                 </div>
               </div>
             </div>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Bot, User, Copy, Check, ThumbsUp, ThumbsDown, Sparkles, HelpCircle, ArrowRight } from 'lucide-react';
+import { Bot, User, Copy, Check, ThumbsUp, ThumbsDown, Sparkles, ArrowRight, Target, Info } from 'lucide-react';
 
 export default function ChatMessage({ message, onSelectQuestion }) {
   const [copied, setCopied] = useState(false);
-  const [feedback, setFeedback] = useState(null); // 'helpful' | 'unhelpful' | null
+  const [feedback, setFeedback] = useState(null);
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
 
   const isUser = message.sender === 'user';
   const isBot = message.sender === 'bot';
@@ -20,87 +21,76 @@ export default function ChatMessage({ message, onSelectQuestion }) {
     setFeedback((prev) => (prev === type ? null : type));
   };
 
-  // Score styling logic
-  const getScoreBadgeClass = (score) => {
-    if (score >= 0.8) return 'score-high';
-    if (score >= 0.55) return 'score-medium';
-    if (score >= 0.32) return 'score-fair';
-    return 'score-low';
-  };
+  const score = message.similarityScore !== undefined ? message.similarityScore : 0;
+  const scorePercent = (score * 100).toFixed(0);
 
   return (
-    <div className={`chat-message-row ${isUser ? 'user-row' : 'bot-row'}`}>
-      <div className="message-avatar-wrapper">
-        {isUser ? (
-          <div className="avatar user-avatar" title="You">
-            <User size={18} />
-          </div>
-        ) : (
-          <div className="avatar bot-avatar" title="IntelliFAQ Bot">
-            <Bot size={18} />
-          </div>
-        )}
+    <div className={`message-item ${isUser ? 'is-user' : 'is-bot'}`}>
+      <div className="message-avatar">
+        {isUser ? <User size={16} /> : <Bot size={16} />}
       </div>
 
-      <div className="message-content-container">
-        <div className="message-meta-header">
-          <span className="sender-name">{isUser ? 'You' : 'IntelliFAQ Assistant'}</span>
-          <span className="message-time">{message.timestamp || 'Just now'}</span>
+      <div className="message-body">
+        {/* Top meta row */}
+        <div className="message-header-line">
+          <span className="author-name">{isUser ? 'You' : 'IntelliFAQ'}</span>
+          <span className="timestamp">{message.timestamp || 'Just now'}</span>
+
+          {isBot && score > 0 && (
+            <div 
+              className="match-badge" 
+              onClick={() => setShowScoreInfo(!showScoreInfo)}
+              title="Click to toggle matching details"
+            >
+              <Target size={12} className="badge-icon" />
+              <span>{scorePercent}% match</span>
+            </div>
+          )}
         </div>
 
-        <div className={`message-bubble ${isUser ? 'user-bubble' : 'bot-bubble'} ${message.isError ? 'error-bubble' : ''}`}>
-          <div className="message-text">
+        {/* Message bubble */}
+        <div className={`bubble ${isUser ? 'user-bubble' : 'bot-bubble'} ${message.isError ? 'is-error' : ''}`}>
+          <div className="text-content">
             {message.text.split('\n\n').map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
 
-          {/* Bot Metadata Card: Matched Question & NLP Similarity Score */}
-          {isBot && message.similarityScore !== undefined && message.similarityScore > 0 && (
-            <div className="nlp-metrics-card">
-              <div className="metrics-row">
-                {message.matchedQuestion && (
-                  <div className="metric-item matched-faq">
-                    <span className="metric-label">Matched FAQ:</span>
-                    <span className="metric-value">"{message.matchedQuestion}"</span>
-                  </div>
-                )}
-
-                <div className="metric-item confidence-item">
-                  <span className="metric-label">Similarity Match:</span>
-                  <span className={`score-badge ${getScoreBadgeClass(message.similarityScore)}`}>
-                    {(message.similarityScore * 100).toFixed(1)}%
-                  </span>
-                  {message.confidenceLabel && (
-                    <span className="confidence-label">({message.confidenceLabel})</span>
-                  )}
-                </div>
+          {/* Clean minimal match info (toggleable or subtle) */}
+          {isBot && score > 0 && showScoreInfo && (
+            <div className="clean-match-drawer">
+              <div className="drawer-item">
+                <span className="drawer-label">Matched FAQ:</span>
+                <span className="drawer-val">"{message.matchedQuestion}"</span>
               </div>
-
-              <div className="metric-disclaimer" title="Similarity explanation">
-                <HelpCircle size={12} className="info-icon" />
-                <span>Textual similarity via TF-IDF & Cosine Similarity. Represents phrasing alignment, not factual certainty.</span>
+              <div className="drawer-item">
+                <span className="drawer-label">Score:</span>
+                <span className="drawer-val">{score.toFixed(4)} ({message.confidenceLabel})</span>
+              </div>
+              <div className="drawer-note">
+                <Info size={11} />
+                <span>Textual similarity via TF-IDF & Cosine Similarity.</span>
               </div>
             </div>
           )}
 
-          {/* Related Questions Pills */}
+          {/* Clean related question chips */}
           {isBot && message.relatedQuestions && message.relatedQuestions.length > 0 && (
-            <div className="related-questions-wrapper">
-              <div className="related-title">
-                <Sparkles size={13} />
-                <span>Related questions you might find helpful:</span>
+            <div className="clean-related-section">
+              <div className="related-lead">
+                <Sparkles size={12} />
+                <span>Related topics</span>
               </div>
-              <div className="related-chips">
+              <div className="related-pills">
                 {message.relatedQuestions.map((q, idx) => (
                   <button
                     key={idx}
-                    className="related-chip"
+                    className="related-pill"
                     onClick={() => onSelectQuestion(q)}
                     title={`Ask: "${q}"`}
                   >
                     <span>{q}</span>
-                    <ArrowRight size={12} className="chip-arrow" />
+                    <ArrowRight size={11} className="pill-arrow" />
                   </button>
                 ))}
               </div>
@@ -108,36 +98,33 @@ export default function ChatMessage({ message, onSelectQuestion }) {
           )}
         </div>
 
-        {/* Action Toolbar for Bot Responses */}
+        {/* Clean action buttons below bot message */}
         {isBot && !message.isError && (
-          <div className="message-actions-toolbar">
+          <div className="bot-actions-row">
             <button
-              className={`action-pill ${copied ? 'action-active' : ''}`}
+              className={`action-btn ${copied ? 'active' : ''}`}
               onClick={handleCopy}
-              title="Copy response to clipboard"
+              title="Copy answer"
             >
               {copied ? <Check size={13} /> : <Copy size={13} />}
               <span>{copied ? 'Copied' : 'Copy'}</span>
             </button>
 
-            <div className="feedback-group">
-              <button
-                className={`action-pill ${feedback === 'helpful' ? 'action-active helpful' : ''}`}
-                onClick={() => handleFeedback('helpful')}
-                title="Mark as helpful"
-              >
-                <ThumbsUp size={13} />
-                <span>Helpful</span>
-              </button>
-              <button
-                className={`action-pill ${feedback === 'unhelpful' ? 'action-active unhelpful' : ''}`}
-                onClick={() => handleFeedback('unhelpful')}
-                title="Mark as not helpful"
-              >
-                <ThumbsDown size={13} />
-                <span>Not Helpful</span>
-              </button>
-            </div>
+            <button
+              className={`action-btn ${feedback === 'helpful' ? 'active' : ''}`}
+              onClick={() => handleFeedback('helpful')}
+              title="Helpful"
+            >
+              <ThumbsUp size={13} />
+            </button>
+
+            <button
+              className={`action-btn ${feedback === 'unhelpful' ? 'active' : ''}`}
+              onClick={() => handleFeedback('unhelpful')}
+              title="Not helpful"
+            >
+              <ThumbsDown size={13} />
+            </button>
           </div>
         )}
       </div>

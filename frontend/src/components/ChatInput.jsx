@@ -1,15 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, CornerDownLeft, Sparkles, X } from 'lucide-react';
+import { ArrowUp, X } from 'lucide-react';
 
 export default function ChatInput({ onSendMessage, disabled, placeholder }) {
   const [text, setText] = useState('');
   const textareaRef = useRef(null);
 
-  // Auto-resize textarea height
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
-      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 140)}px`;
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 120)}px`;
     }
   }, [text]);
 
@@ -41,27 +40,27 @@ export default function ChatInput({ onSendMessage, disabled, placeholder }) {
   };
 
   return (
-    <div className="chat-input-wrapper">
-      <form className="chat-input-container" onSubmit={handleSubmit}>
+    <div className="input-zone">
+      <form className="input-card" onSubmit={handleSubmit}>
         <textarea
           ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder || "Ask any tech or development question (e.g. 'What is React?', 'FastAPI vs Flask', 'Explain Docker')..."}
+          placeholder={placeholder || "Ask any tech or development question (e.g. 'What is React?', 'FastAPI vs Flask')..."}
           disabled={disabled}
           rows={1}
-          className="chat-textarea"
+          className="input-textarea"
           aria-label="Ask a question"
         />
 
-        <div className="input-actions-row">
+        <div className="input-btn-group">
           {text.trim().length > 0 && (
             <button
               type="button"
-              className="clear-input-btn"
+              className="clear-btn"
               onClick={handleClear}
-              title="Clear input"
+              title="Clear"
               aria-label="Clear text"
             >
               <X size={14} />
@@ -70,20 +69,18 @@ export default function ChatInput({ onSendMessage, disabled, placeholder }) {
 
           <button
             type="submit"
-            className="send-button"
+            className="submit-send-btn"
             disabled={!text.trim() || disabled}
-            title="Send question (Enter)"
-            aria-label="Send question"
+            title="Send (Enter)"
+            aria-label="Send"
           >
-            <Send size={16} />
+            <ArrowUp size={16} />
           </button>
         </div>
       </form>
 
-      <div className="input-footer-hint">
-        <span>Press <kbd>Enter ↵</kbd> to send, <kbd>Shift + Enter</kbd> for newline</span>
-        <span className="dot-divider">•</span>
-        <span>Local TF-IDF Vectorization & Cosine Similarity</span>
+      <div className="input-subtext">
+        <span>Press Enter to send • Shift + Enter for newline</span>
       </div>
     </div>
   );

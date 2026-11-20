@@ -1,11 +1,12 @@
 import React from 'react';
-import { Bot, Plus, Moon, Sun, Info, Menu, Sparkles, Download } from 'lucide-react';
+import { Bot, Plus, Moon, Sun, Info, PanelLeft, Download } from 'lucide-react';
 
 export default function Header({
   isDark,
   onToggleTheme,
   onNewChat,
   onToggleSidebar,
+  sidebarOpen,
   onOpenAbout,
   onExportChat,
   hasMessages,
@@ -14,76 +15,67 @@ export default function Header({
   const isHealthy = backendStatus === 'healthy';
 
   return (
-    <header className="chat-header">
-      <div className="header-left">
+    <header className="site-header">
+      <div className="header-start">
         <button
-          className="icon-button mobile-only"
+          className="ghost-btn sidebar-toggle"
           onClick={onToggleSidebar}
+          title={sidebarOpen ? "Hide sidebar" : "Show sidebar"}
           aria-label="Toggle sidebar"
-          title="Toggle FAQ & History Sidebar"
         >
-          <Menu size={20} />
+          <PanelLeft size={18} />
         </button>
 
-        <div className="brand-logo" onClick={onNewChat} role="button" tabIndex={0}>
-          <div className="logo-icon-wrapper">
-            <Bot size={22} className="logo-icon" />
-            <Sparkles size={12} className="sparkle-badge" />
+        <div className="brand" onClick={onNewChat} role="button" tabIndex={0}>
+          <div className="brand-icon">
+            <Bot size={18} />
           </div>
-          <div className="brand-text">
-            <div className="brand-title-row">
-              <span className="brand-name">IntelliFAQ</span>
-              <span className="brand-badge">NLP Powered</span>
-            </div>
-            <span className="brand-tagline">Your Intelligent FAQ Assistant</span>
-          </div>
+          <span className="brand-title">IntelliFAQ</span>
         </div>
 
-        <div className="status-indicator-pill" title={`NLP Engine: ${backendStatus}`}>
-          <span className={`status-dot ${isHealthy ? 'status-online' : 'status-warning'}`} />
-          <span className="status-label">
-            {isHealthy ? 'NLP Engine Active' : 'Connecting Engine...'}
-          </span>
+        <div className="status-indicator" title={`NLP Engine: ${backendStatus}`}>
+          <span className={`status-dot ${isHealthy ? 'is-live' : 'is-off'}`} />
+          <span className="status-text">{isHealthy ? 'Active' : 'Offline'}</span>
         </div>
       </div>
 
-      <div className="header-right">
+      <div className="header-end">
         {hasMessages && onExportChat && (
           <button
-            className="icon-button"
+            className="ghost-btn"
             onClick={onExportChat}
-            title="Export conversation as text"
+            title="Export conversation (.md)"
             aria-label="Export chat"
           >
-            <Download size={18} />
+            <Download size={16} />
           </button>
         )}
 
         <button
-          className="action-button new-chat-btn"
+          className="new-chat-compact-btn"
           onClick={onNewChat}
-          title="Start a new conversation"
+          title="New conversation"
         >
-          <Plus size={16} />
-          <span className="btn-text">New Chat</span>
+          <Plus size={15} />
+          <span>New Chat</span>
         </button>
 
         <button
-          className="icon-button"
+          className="ghost-btn"
           onClick={onOpenAbout}
-          title="About IntelliFAQ & NLP Pipeline"
+          title="About NLP Model"
           aria-label="About"
         >
-          <Info size={19} />
+          <Info size={16} />
         </button>
 
         <button
-          className="icon-button theme-toggle-btn"
+          className="ghost-btn theme-btn"
           onClick={onToggleTheme}
           title={`Switch to ${isDark ? 'Light' : 'Dark'} mode`}
           aria-label="Toggle theme"
         >
-          {isDark ? <Sun size={19} /> : <Moon size={19} />}
+          {isDark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
       </div>
     </header>

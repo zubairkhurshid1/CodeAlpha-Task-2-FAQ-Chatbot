@@ -384,6 +384,7 @@ export default function App() {
           onToggleTheme={() => setIsDark((prev) => !prev)}
           onNewChat={handleNewChat}
           onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
+          sidebarOpen={sidebarOpen}
           onOpenAbout={() => setAboutOpen(true)}
           onExportChat={handleExportChat}
           hasMessages={activeConversation && activeConversation.messages.length > 0}
