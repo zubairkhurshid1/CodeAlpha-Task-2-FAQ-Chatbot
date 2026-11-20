@@ -312,6 +312,52 @@ export default function App() {
     }
   };
 
+  // Export active chat conversation as Markdown
+  const handleExportChat = useCallback(() => {
+    if (!activeConversation || activeConversation.messages.length === 0) return;
+    const lines = [
+      `# IntelliFAQ Chat Transcript`,
+      `Conversation: ${activeConversation.title}`,
+      `Exported: ${new Date().toLocaleString()}`,
+      `Similarity Threshold: ${threshold}`,
+      `----------------------------------------\n`
+    ];
+    activeConversation.messages.forEach((m) => {
+      const sender = m.sender === 'user' ? 'You' : 'IntelliFAQ Assistant';
+      lines.push(`[${m.timestamp || ''}] ${sender}:`);
+      lines.push(`${m.text}\n`);
+      if (m.matchedQuestion) {
+        lines.push(`  → Matched FAQ: "${m.matchedQuestion}" (Similarity: ${(m.similarityScore * 100).toFixed(1)}%)`);
+      }
+      lines.push('');
+    });
+    const blob = new Blob([lines.join('\n')], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `IntelliFAQ_${activeConversation.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.md`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [activeConversation, threshold]);
+
+  // Add custom FAQ dynamically
+  const handleAddFAQ = useCallback(async (faqData) => {
+    try {
+      const res = await chatService.addFAQ(faqData);
+      if (res && res.success) {
+        // Refresh FAQ catalog list
+        const refreshed = await chatService.getFAQs();
+        if (refreshed && refreshed.faqs) {
+          setFaqs(refreshed.faqs);
+        }
+        return res;
+      }
+    } catch (e) {
+      console.error('Failed to add FAQ:', e);
+      throw e;
+    }
+  }, []);
+
   return (
     <div className="app-layout">
       {/* Sidebar for Navigation, Chat History & FAQ Browser */}
@@ -328,6 +374,7 @@ export default function App() {
         onSelectQuestion={handleSendMessage}
         threshold={threshold}
         onThresholdChange={setThreshold}
+        onAddFAQ={handleAddFAQ}
       />
 
       {/* Main Chat Area */}
@@ -338,6 +385,8 @@ export default function App() {
           onNewChat={handleNewChat}
           onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
           onOpenAbout={() => setAboutOpen(true)}
+          onExportChat={handleExportChat}
+          hasMessages={activeConversation && activeConversation.messages.length > 0}
           backendStatus={backendStatus}
         />
 

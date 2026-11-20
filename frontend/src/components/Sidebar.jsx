@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   MessageSquare, Plus, Trash2, Sliders, BookOpen, 
-  ChevronRight, ChevronDown, X, ShieldAlert, Award, Search
+  ChevronRight, ChevronDown, X, Award, Search, PlusCircle, Check
 } from 'lucide-react';
 
 export default function Sidebar({
@@ -16,11 +16,22 @@ export default function Sidebar({
   faqs,
   onSelectQuestion,
   threshold,
-  onThresholdChange
+  onThresholdChange,
+  onAddFAQ
 }) {
   const [activeTab, setActiveTab] = useState('history'); // 'history' | 'faqs' | 'settings'
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedCategory, setExpandedCategory] = useState(null);
+
+  // Add FAQ modal state
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [newCategory, setNewCategory] = useState('General');
+  const [newQuestion, setNewQuestion] = useState('');
+  const [newAnswer, setNewAnswer] = useState('');
+  const [newPatterns, setNewPatterns] = useState('');
+  const [addLoading, setAddLoading] = useState(false);
+  const [addSuccess, setAddSuccess] = useState(false);
+  const [addError, setAddError] = useState(null);
 
   // Group FAQs by category
   const categories = React.useMemo(() => {
@@ -52,6 +63,44 @@ export default function Sidebar({
     });
     return result;
   }, [categories, searchQuery]);
+
+  const handleCreateFAQSubmit = async (e) => {
+    e.preventDefault();
+    if (!newQuestion.trim() || !newAnswer.trim()) return;
+
+    setAddLoading(true);
+    setAddError(null);
+
+    const patternsArr = newPatterns
+      .split('\n')
+      .map((p) => p.trim())
+      .filter(Boolean);
+
+    try {
+      if (onAddFAQ) {
+        await onAddFAQ({
+          category: newCategory.trim() || 'General',
+          question: newQuestion.trim(),
+          answer: newAnswer.trim(),
+          patterns: patternsArr.length > 0 ? patternsArr : [newQuestion.trim()],
+          related_questions: [],
+          keywords: []
+        });
+      }
+      setAddSuccess(true);
+      setTimeout(() => {
+        setAddSuccess(false);
+        setShowAddModal(false);
+        setNewQuestion('');
+        setNewAnswer('');
+        setNewPatterns('');
+      }, 1500);
+    } catch (err) {
+      setAddError(err.message || 'Failed to save FAQ');
+    } finally {
+      setAddLoading(false);
+    }
+  };
 
   return (
     <>
@@ -146,18 +195,31 @@ export default function Sidebar({
         {/* Tab 2: FAQ Knowledge Catalog */}
         {activeTab === 'faqs' && (
           <div className="sidebar-content faq-catalog-section">
-            <div className="faq-search-box">
-              <Search size={14} className="search-icon" />
-              <input
-                type="text"
-                placeholder="Search FAQs..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="faq-search-input"
-              />
-              {searchQuery && (
-                <button className="clear-search-btn" onClick={() => setSearchQuery('')}>
-                  <X size={12} />
+            <div className="faq-hub-toolbar">
+              <div className="faq-search-box">
+                <Search size={14} className="search-icon" />
+                <input
+                  type="text"
+                  placeholder="Search FAQs..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="faq-search-input"
+                />
+                {searchQuery && (
+                  <button className="clear-search-btn" onClick={() => setSearchQuery('')}>
+                    <X size={12} />
+                  </button>
+                )}
+              </div>
+
+              {onAddFAQ && (
+                <button
+                  className="add-faq-trigger-btn"
+                  onClick={() => setShowAddModal(true)}
+                  title="Add custom FAQ entry"
+                >
+                  <PlusCircle size={14} />
+                  <span>Add FAQ</span>
                 </button>
               )}
             </div>
@@ -258,6 +320,105 @@ export default function Sidebar({
           </div>
         </div>
       </aside>
+
+      {/* Add Custom FAQ Modal */}
+      {showAddModal && (
+        <div className="modal-backdrop" onClick={() => setShowAddModal(false)}>
+          <div className="modal-dialog add-faq-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <div className="modal-title-group">
+                <PlusCircle size={20} className="modal-title-icon" />
+                <h3 className="modal-title">Add Custom FAQ</h3>
+              </div>
+              <button className="icon-button" onClick={() => setShowAddModal(false)}>
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleCreateFAQSubmit}>
+              <div className="modal-body">
+                {addSuccess ? (
+                  <div className="add-faq-success-message">
+                    <Check size={28} className="success-icon" />
+                    <strong>FAQ Added & Indexed!</strong>
+                    <span>You can now ask this question in the chat immediately.</span>
+                  </div>
+                ) : (
+                  <>
+                    {addError && <div className="add-faq-error">{addError}</div>}
+
+                    <div className="form-field">
+                      <label className="form-label">Category</label>
+                      <input
+                        type="text"
+                        value={newCategory}
+                        onChange={(e) => setNewCategory(e.target.value)}
+                        placeholder="e.g. Frontend Development, Databases, etc."
+                        required
+                        className="form-input"
+                      />
+                    </div>
+
+                    <div className="form-field">
+                      <label className="form-label">Canonical Question</label>
+                      <input
+                        type="text"
+                        value={newQuestion}
+                        onChange={(e) => setNewQuestion(e.target.value)}
+                        placeholder="e.g. What is GraphQL?"
+                        required
+                        className="form-input"
+                      />
+                    </div>
+
+                    <div className="form-field">
+                      <label className="form-label">Answer</label>
+                      <textarea
+                        value={newAnswer}
+                        onChange={(e) => setNewAnswer(e.target.value)}
+                        placeholder="Detailed answer text..."
+                        required
+                        rows={3}
+                        className="form-input form-textarea"
+                      />
+                    </div>
+
+                    <div className="form-field">
+                      <label className="form-label">Question Variations (one per line)</label>
+                      <textarea
+                        value={newPatterns}
+                        onChange={(e) => setNewPatterns(e.target.value)}
+                        placeholder="What is GraphQL used for?&#10;Explain GraphQL API"
+                        rows={2}
+                        className="form-input form-textarea"
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {!addSuccess && (
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="action-button"
+                    onClick={() => setShowAddModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="action-button modal-primary-btn"
+                    disabled={addLoading || !newQuestion.trim() || !newAnswer.trim()}
+                  >
+                    {addLoading ? 'Indexing...' : 'Save & Index FAQ'}
+                  </button>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

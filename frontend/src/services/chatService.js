@@ -56,6 +56,27 @@ export const chatService = {
   },
 
   /**
+   * Dynamically add a new FAQ to the knowledge base
+   */
+  async addFAQ(faqData) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/faqs`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(faqData),
+      });
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        throw new Error(err.detail || 'Failed to add FAQ');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('ChatService Error (addFAQ):', error);
+      throw error;
+    }
+  },
+
+  /**
    * Fetch suggested questions for the welcome screen
    */
   async getSuggestions(count = 4) {

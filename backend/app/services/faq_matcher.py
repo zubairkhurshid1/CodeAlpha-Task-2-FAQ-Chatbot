@@ -57,6 +57,25 @@ class FAQMatcher:
 
         self._build_index()
 
+    def add_faq(self, faq_dict: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Dynamically adds a new FAQ to the dataset, saves to JSON, and updates the TF-IDF matrix.
+        """
+        if not faq_dict.get("id"):
+            import uuid
+            faq_dict["id"] = f"faq_{uuid.uuid4().hex[:8]}"
+
+        self.faqs.append(faq_dict)
+        try:
+            with open(self.data_path, "w", encoding="utf-8") as f:
+                json.dump(self.faqs, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            self.faqs.pop()
+            raise e
+
+        self._build_index()
+        return faq_dict
+
     def _build_index(self) -> None:
         """
         Builds the searchable corpus from FAQ canonical questions, variations, and keywords,

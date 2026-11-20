@@ -45,6 +45,15 @@ class FAQItem(BaseModel):
     related_questions: List[str]
 
 
+class NewFAQRequest(BaseModel):
+    category: str = Field(..., min_length=2, max_length=100, description="FAQ category (e.g. Frontend Development)")
+    question: str = Field(..., min_length=3, max_length=500, description="Canonical question")
+    answer: str = Field(..., min_length=5, max_length=3000, description="Answer text")
+    patterns: List[str] = Field(default_factory=list, description="Common phrasing variations")
+    related_questions: List[str] = Field(default_factory=list, description="Related follow-up questions")
+    keywords: List[str] = Field(default_factory=list, description="Keywords for indexing")
+
+
 class ThresholdUpdateRequest(BaseModel):
     threshold: float = Field(..., ge=0.0, le=1.0, description="New default similarity threshold")
 
@@ -91,6 +100,47 @@ async def get_faqs(category: Optional[str] = Query(None, description="Optional c
     return {
         "total": len(faqs),
         "faqs": faqs
+    }
+
+
+@router.post("/faqs", summary="Add a new custom FAQ dynamically", status_code=status.HTTP_201_CREATED)
+async def create_faq(payload: NewFAQRequest):
+    """
+    Adds a new FAQ entry to the dataset, saves it, and immediately updates the TF-IDF search index.
+    """
+    patterns = list(payload.patterns)
+    if payload.question not in patterns:
+        patterns.append(payload.question)
+
+    faq_dict = {
+        "category": payload.category.strip(),
+        "question": payload.question.strip(),
+        "answer": payload.answer.strip(),
+        "patterns": patterns,
+        "related_questions": payload.related_questions,
+        "keywords": payload.keywords
+    }
+    created = matcher.add_faq(faq_dict)
+    return {
+        "success": True,
+        "message": "FAQ successfully added and re-indexed into TF-IDF corpus.",
+        "faq": created,
+        "total_faqs": len(matcher.faqs),
+        "total_patterns": len(matcher.pattern_records)
+    }
+
+
+@router.post("/faqs/reload", summary="Reload FAQ dataset from disk")
+async def reload_faqs():
+    """
+    Forces the NLP engine to reload faqs.json and recompute TF-IDF vectors.
+    """
+    matcher.reload_dataset()
+    return {
+        "success": True,
+        "message": "FAQ dataset reloaded and re-indexed successfully.",
+        "total_faqs": len(matcher.faqs),
+        "total_patterns": len(matcher.pattern_records)
     }
 
 

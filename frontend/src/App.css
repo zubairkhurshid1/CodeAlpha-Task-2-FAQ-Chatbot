@@ -1521,3 +1521,98 @@ input, textarea {
     padding: 0.45rem;
   }
 }
+
+/* Add FAQ Toolbar & Modal */
+.faq-hub-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-hub-toolbar .faq-search-box {
+  margin-bottom: 0;
+}
+
+.add-faq-trigger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  border: 1px dashed var(--accent-border);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.add-faq-trigger-btn:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-style: solid;
+}
+
+.add-faq-modal {
+  max-width: 520px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.form-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-input {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input:focus {
+  border-color: var(--accent-primary);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.add-faq-success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  gap: 0.5rem;
+}
+
+.success-icon {
+  color: var(--success-color);
+  background-color: var(--success-bg);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+}
+
+.add-faq-error {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--danger-bg);
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}

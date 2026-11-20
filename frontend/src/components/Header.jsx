@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, Plus, Moon, Sun, Info, Menu, Sparkles } from 'lucide-react';
+import { Bot, Plus, Moon, Sun, Info, Menu, Sparkles, Download } from 'lucide-react';
 
 export default function Header({
   isDark,
@@ -7,6 +7,8 @@ export default function Header({
   onNewChat,
   onToggleSidebar,
   onOpenAbout,
+  onExportChat,
+  hasMessages,
   backendStatus
 }) {
   const isHealthy = backendStatus === 'healthy';
@@ -46,6 +48,17 @@ export default function Header({
       </div>
 
       <div className="header-right">
+        {hasMessages && onExportChat && (
+          <button
+            className="icon-button"
+            onClick={onExportChat}
+            title="Export conversation as text"
+            aria-label="Export chat"
+          >
+            <Download size={18} />
+          </button>
+        )}
+
         <button
           className="action-button new-chat-btn"
           onClick={onNewChat}
